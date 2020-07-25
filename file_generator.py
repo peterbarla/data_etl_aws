@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-print('hello')
-=======
 from datetime import date, timedelta
 import os
 import random
@@ -32,4 +29,3 @@ def generate(count: int)-> list:
         open(f'files/{random_category}{count}_{formatted_today}_{formatted_tomorrow}.txt', 'w+')
         filenames.append(f'{random_category}{count}_{formatted_today}_{formatted_tomorrow}.txt')
     return filenames
->>>>>>> dev
