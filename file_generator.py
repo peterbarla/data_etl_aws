@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import os
 import random
 
@@ -6,8 +6,8 @@ import random
 category_types = ['sum', 'hist', 'prob', 'glow']
 
 # GET CURRENT DATE IN %D/%M/%Y format
-todays_date = date.today()
-formatted_today = todays_date.strftime('%d%m%Y')
+todays_date = datetime.now()
+formatted_today = todays_date.strftime('%d%m%Y%H:%M:%S')
 
 # GET TOMORROW`S DATE IN %D/%M/%Y format
 tomorrows_date = date.today() + timedelta(days=1)

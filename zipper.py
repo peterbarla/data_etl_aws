@@ -1,5 +1,6 @@
-from zipfile import ZipFile 
+import zipfile
 import os
+from s3_pusher import upload
 
 # CREATE zipfiles FOLDER IF IT DOESN`T EXIST
 if not os.path.exists('./zipfiles'):
@@ -11,8 +12,8 @@ zipped_files = []
 # ZIPS EACH FILE FROM filenames AND SAVES THE ZIPS IN THE zipfiles DIRECTORY AND ADDS THEM TO THE zipped_files LIST
 def zipp(filenames: list)-> list:
     for f in filenames:
-        with ZipFile(f'zipfiles/{f[:-4]}.zip', 'w') as zip:
+        with zipfile.ZipFile(f'zipfiles/{f[:-4]}.zip', 'w', compression=zipfile.ZIP_DEFLATED) as zip:
             zip.write(f'files/{f}', f)
-            zipped_files.append(zip)
-
-    return zipped_files
+            # UPLOAD ZIPPED FILE TO S3
+            print(zip)
+            upload(f'zipfiles/{f[:-4]}.zip')
