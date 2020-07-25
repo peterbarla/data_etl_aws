@@ -1,7 +1,7 @@
 import os, shutil
 
 # DELETE ALL FILES FROM A GIVEN PATH DIR
-def empty(path):
+def empty(path: str)-> None:
     for filename in os.listdir(path):
         file_path = os.path.join(path, filename)
         try:

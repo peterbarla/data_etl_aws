@@ -1,6 +1,7 @@
 from recycler import empty
 from file_generator import generate
 from zipper import zipp
+from s3_pusher import upload
 
 # DELETING ALL CONTENT OF ./files BEFORE GENERATING THE NEW SET OF FILES
 folder = './files'
@@ -16,8 +17,5 @@ filenames = []
 # GENERATE FILES
 filenames = generate(10)
 
-# STORES ALL ZIPPED GENERATED FILES
-zipfiles = []
-
-# ZIPP FILES IN filenames
-zipfiles = zipp(filenames)
+# ZIPP FILES IN filenames AND UPLOAD THEM
+zipp(filenames)
