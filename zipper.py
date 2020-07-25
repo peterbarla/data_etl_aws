@@ -11,7 +11,6 @@ zipped_files = []
 # ZIPS EACH FILE FROM filenames AND SAVES THE ZIPS IN THE zipfiles DIRECTORY AND ADDS THEM TO THE zipped_files LIST
 def zipp(filenames: list)-> list:
     for f in filenames:
-        print(f)
         with ZipFile(f'zipfiles/{f[:-4]}.zip', 'w') as zip:
             zip.write(f'files/{f}', f)
             zipped_files.append(zip)
