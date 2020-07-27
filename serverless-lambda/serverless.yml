@@ -1,0 +1,19 @@
+
+
+service: serverless-file-upload
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: peter-admin
+
+functions:
+  s3upload:
+    handler: handler.handler
+    events:
+      - s3:
+        bucket: my-etl-bucket
+        event: s3:ObjectCreated:*
+        rules:
+          - sufix: .zip
+        existing: true
