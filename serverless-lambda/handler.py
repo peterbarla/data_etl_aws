@@ -1,5 +1,6 @@
 import json
 from datetime import time, datetime
+from analyzer import build_and_send_query
 
 def handler(event, context):
 
@@ -18,6 +19,11 @@ def handler(event, context):
     # ARRIVAL TIME
     timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
-    print(uploaded_filename, file_category, lwm, hwm, timestamp)
+    # BUILD AND SEND QUERY TO REDSHIFT CLUSTER
+    build_and_send_query(file_category, uploaded_filename, lwm, hwm, timestamp)
+
+
+
+    
 
     
