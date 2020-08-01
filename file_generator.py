@@ -22,7 +22,7 @@ filenames = []
 
 # GENERATE COUNT NUMBER OF FILES
 def generate(count: int)-> list:
-    for count in range(10):
+    for count in range(count):
         # PICK A RANDOMLY SELECTED CATEGORY TYPE WITH A RANDOMLY GENERATED INDEX
         random_category_index = random.randint(0, 3)
         random_category = category_types[random_category_index]

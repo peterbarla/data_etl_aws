@@ -1,23 +1,14 @@
 
+service: serverless-lambda
 
-service: serverless-file-upload
-
-plugins:
-  - serverless-python-requirements
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.7
   profile: peter-admin
   region: us-east-2
+  timeout: 50
 
 functions:
-  s3upload:
+  s3upload2:
     handler: handler.handler
-    events:
-      - s3:
-        bucket: my-etl-bucket
-        event: s3:ObjectCreated:*
-        rules:
-          - sufix: .zip
-        existing: true
