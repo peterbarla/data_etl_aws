@@ -15,7 +15,7 @@ empty(folder)
 filenames = []
 
 # GENERATE FILES
-filenames = generate(10)
+filenames = generate(1)
 
 # ZIPP FILES IN filenames AND UPLOAD THEM
 zipp(filenames)

@@ -4,12 +4,6 @@ import sys
 import boto3
 import datetime
 
-'''REDSHIFT_DATABASE = 'peterdb'
-REDSHIFT_USER = 'peter.barla'
-REDSHIFT_PASSWD = 'Pepecsek1'
-REDSHIFT_PORT = '5439'
-REDSHIFT_ENDPOINT = 'redshift-peter-1.cncdopxmun4t.us-east-2.redshift.amazonaws.com'''
-
 RS_PORT = 5439
 RS_USER = 'peter.barla'
 DATABASE = 'peterdb'
